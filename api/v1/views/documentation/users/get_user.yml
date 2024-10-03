@@ -1,0 +1,35 @@
+Get a user with ID
+---
+tags:
+  - users
+parameters:
+  - name: user_id
+    in: path
+    type: string
+    required: true
+    description: user id
+responses:
+  200:
+    description: request successful
+    schema:
+      type: object
+      description: details of the found user
+      example: {
+        "status": "ok",
+        "user": {
+          "email": "gam@mail.com",
+          "first_name": "Abraham",
+          "id": "66fc9b8210888a01b3d7d972",
+          "last_name": "Gyimah",
+          "phone": "0255523542"
+        }
+      }
+  404:
+    description: No user found
+    schema:
+      type: object
+      description: response object message
+      example: {
+              'error': 404,
+              'description': 'no user found'
+      }

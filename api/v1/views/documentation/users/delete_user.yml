@@ -1,0 +1,29 @@
+Delete user from database
+---
+tags:
+  - users
+parameters:
+  - name: user_id
+    in: formData
+    type: string
+    description: user id
+    required: true
+responses:
+  200:
+    description: request successful
+    schema:
+      type: object
+      description: response details
+      example: {
+              'msg': 'delete successful',
+              'status': 'ok'
+      }
+  404:
+    description: user not found
+    schema:
+      type: object
+      description: response details
+      example: {
+              'error': 404,
+              'description': 'user not found'
+      }

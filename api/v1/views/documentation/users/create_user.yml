@@ -1,0 +1,50 @@
+Create new user
+---
+tags:
+  - users
+parameters:
+  - name: first_name
+    in: formData
+    type: string
+    required: true
+    descrption: user first name
+  - name: last_name
+    in: formData
+    type: string
+    description: user last name
+  - name: email
+    in: formData
+    type: string
+    required: true
+    description: user email
+  - name: phone
+    in: formData
+    type: string
+    required: true
+    description: user phone number
+responses:
+  201:
+    description: request successful
+    schema:
+      type: object
+      description: new created user details
+      example: {
+        "details": {
+          "email": "pro@mail.com",
+          "first_name": "Prosper",
+          "id": "66fe72d29e8240e22e691ad4",
+          "last_name": "Kumi",
+          "phone": "0255523542"
+      },
+      "msg": "user created",
+      "status": "ok"
+  }
+  400:
+    description: request unsuccessful
+    schema:
+      type: object
+      description: request unsuccessful
+      example: {
+              'error': 400,
+              'description': 'email already exist'
+      }

@@ -1,0 +1,21 @@
+Cancel order
+---
+tags:
+  - orders
+parameters:
+  - in: path
+    name: user_id
+    type: string
+    description: user id
+    required: true
+responses:
+  404:
+    description: order not found
+    schema:
+      type: object
+      example: {error: 404, description: order not found}
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {msg: delete successful, status: ok}

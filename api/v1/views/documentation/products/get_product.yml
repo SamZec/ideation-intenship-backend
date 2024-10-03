@@ -1,0 +1,29 @@
+Get product by ID
+---
+tags:
+  - products
+parameters:
+  - name: product_id
+    in: path
+    type: string
+    description: product id
+    required: true
+responses:
+  404:
+    description: product not found
+    schema:
+      type: object
+      example: {'error': 404, 'description': 'product not foun'}
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "product": {
+    "category": "Food",
+    "id": "66fc92b2a2611c08e1051b2f",
+    "name": "Maize",
+    "price": 1000
+  },
+  "status": "ok"
+}

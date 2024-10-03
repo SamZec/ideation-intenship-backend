@@ -1,0 +1,45 @@
+Get all users available from the database
+---
+tags:
+  - users
+responses:
+  200:
+    description: request successful
+    schema:
+      type: object
+      description: contains all the available users
+      example: {
+              "status": "ok",
+              "users": [
+       {
+            "email": "sam@mail.com",
+            "first_name": "Samuel",
+            "id": "66fc6ce8e85373c362f6de1e",
+            "last_name": "Affum",
+            "phone": "0255523542"
+        },
+        {
+            "email": "gam@mail.com",
+            "first_name": "Abraham",
+            "id": "66fc9b8210888a01b3d7d972",
+            "last_name": "Gyimah",
+            "phone": "0255523542"
+        },
+        {
+            "email": "addo@mail.com",
+            "first_name": "Mercy",
+            "id": "66fdb39d0ee7f07e02f6ad83",
+            "last_name": "Addo",
+            "phone": "0255523542"
+        }
+    ]
+}
+  404:
+   description: No users found
+   schema:
+     type: object
+     description: empty results
+     example: {
+             'error': 404,
+             'description': 'no users found'
+     }

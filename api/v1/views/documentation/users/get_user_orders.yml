@@ -1,0 +1,49 @@
+Get user orders
+---
+tags:
+- users
+parameters:
+  - name: user_id
+    in: path
+    type: string
+    description: user id
+    required: true
+responses:
+  404:
+    description: 'orders not found'
+    schema:
+      type: object
+      description: response details
+      example: {
+              'error': 404,
+              'descrption': 'orders not found'
+      }
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "orders": [
+    {
+      "date": "02-Oct-2024, 18:22:52",
+      "id": "66fd8f7ce5350d0c01218b8c",
+      "products": [
+        "Maize",
+        "Belt"
+      ],
+      "total": 2000,
+      "user_id": "66fc6ce8e85373c362f6de1e"
+    },
+    {
+      "date": "02-Oct-2024, 18:24:57",
+      "id": "66fd8ff94a576289ecadb554",
+      "products": [
+        "Maize",
+        "Belt"
+      ],
+      "total": 2000,
+      "user_id": "66fc6ce8e85373c362f6de1e"
+    },
+  ],
+  "status": "ok"
+}

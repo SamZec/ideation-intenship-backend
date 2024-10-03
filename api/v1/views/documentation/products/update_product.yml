@@ -1,0 +1,47 @@
+Upadte product details
+---
+tags:
+  - products
+consumes:
+  - application/json
+parameters:
+  - name: product_id
+    in: path
+    required: true
+    type: string
+    description: prodcut id
+  - name: name
+    in: formData
+    type: string
+    description: new product name
+  - name: price
+    in: formData
+    type: float
+    description: new product price
+  - name: category
+    in: formData
+    type: string
+    description: new product category
+responses:
+  404:
+    description: no product found
+    schema:
+      type: object
+      description: response details
+      example: {error: 404, description: no product found}
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "msg": "update successful",
+  "product": [
+    {
+      "category": "Food",
+      "id": "66fc92b2a2611c08e1051b2f",
+      "name": "Maize",
+      "price": 1000
+    }
+  ],
+  "status": "ok"
+}

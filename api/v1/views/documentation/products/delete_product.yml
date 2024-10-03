@@ -1,0 +1,21 @@
+Delete product
+---
+tags:
+  - products
+parameters:
+  - name: product_id
+    in: path
+    description: product id
+    type: string
+    required: true
+responses:
+  404:
+    description: product not found
+    schema:
+      type: object
+      example: {error: 404, description: product not found}
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {msg: delete successful, status: ok}

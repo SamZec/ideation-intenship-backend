@@ -1,0 +1,40 @@
+Get all products
+---
+tags:
+  - products
+responses:
+  404:
+    description: 'products not found'
+    schema:
+      type: object
+      example: {
+              'error': 404,
+              'description': 'no products found'
+      }
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "status": "ok",
+  "users": [
+    {
+      "category": "Food",
+      "id": "66fc92b2a2611c08e1051b2f",
+      "name": "Maize",
+      "price": 1000
+    },
+    {
+      "category": "Lubricants",
+      "id": "66fc99a81166a4a57a6854cc",
+      "name": "Clean Engine",
+      "price": 1000
+    },
+    {
+      "category": "Men's Wear",
+      "id": "66fc9a0245ef3a4a04773844",
+      "name": "Belt",
+      "price": 1000
+    }
+  ]
+}

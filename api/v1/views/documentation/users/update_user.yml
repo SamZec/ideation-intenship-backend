@@ -1,0 +1,61 @@
+Update user details
+---
+tags:
+  - users
+parameters:
+  - name: user_id
+    in: path
+    type: string
+    required: true
+    description: user id
+  - name: first_name
+    in: formData
+    type: string
+    description: user first name
+  - name: last_name
+    in: formData
+    type: string
+    description: user last name
+  - name: email
+    in: formData
+    type: string
+    description: user email
+  - name: phone
+    in: formData
+    type: string
+    description: user phone number
+responses:
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {
+        "details": [
+          {
+              "email": "pro@mail.com",
+              "first_name": "Prosper",
+              "id": "66fe72d29e8240e22e691ad4",
+              "last_name": "Bini",
+              "phone": "0255523542"
+          }
+       ],
+        "msg": "update successful"
+      } 
+  404:
+    description: user not found
+    schema:
+      type: object
+      description: response details
+      example: {
+              'error': 404,
+              'description': 'user not found'
+      }
+  500:
+    description: internal server error
+    schema:
+      type: object
+      description: response details
+      example: {
+              'error': 500,
+              'description': 'Invalid attributes'
+      }

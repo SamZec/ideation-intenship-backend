@@ -1,0 +1,33 @@
+Get order by ID
+---
+tags:
+  - orders
+parameters:
+  - name: order_id
+    in: path
+    type: string
+    description: order id
+    required: true
+responses:
+  404:
+    description: order not found
+    schema:
+      type: object
+      example: {error: 404, description: order not found}
+  200:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "order": {
+    "date": "02-Oct-2024, 19:18:09",
+    "id": "66fd9c717d5ed889dbda294d",
+    "products": [
+      "Maize",
+      "Belt"
+    ],
+    "total": 2000,
+    "user_id": "66fc6ce8e85373c362f6de1e"
+  },
+  "status": "oik"
+}

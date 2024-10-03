@@ -1,0 +1,40 @@
+Add new order
+---
+tags:
+  - orders
+parameters:
+  - name: user_id
+    in: formData
+    type: string
+    description: user id
+    required: true
+  - name: products
+    in: formData
+    type: array
+    items:
+      type: list
+    description: order items
+    required: true
+responses:
+  400:
+    description: request unsuccessful
+    schema:
+      type: object
+      example: {error: 400, description: products required}
+  201:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "details": {
+    "date": "03-Oct-2024, 15:21:15",
+    "id": "66feb66b77be5099b13529c8",
+    "products": [
+      "Belt"
+    ],
+    "total": 1000,
+    "user_id": "66fe72d29e8240e22e691ad4"
+  },
+  "msg": "product created",
+  "status": "ok"
+}

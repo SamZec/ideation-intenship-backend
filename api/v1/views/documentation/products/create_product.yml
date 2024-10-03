@@ -1,0 +1,43 @@
+Add new product
+---
+tags:
+  - products
+parameters:
+  - name: name
+    in: formData
+    type: string
+    description: name of product
+    required: true
+  - name: price
+    in: formData
+    type: string
+    description: price of product
+    required: true
+  - name: category
+    in: formData
+    type: string
+    description: category of product
+    required: true
+responses:
+  400:
+    description: request unsuccessful
+    schema:
+      type: object
+      example: {
+              error: 400,
+              description: price must be number in two decimal place
+      }
+  201:
+    description: request successful
+    schema:
+      type: object
+      example: {
+  "details": {
+    "category": "Beverages",
+    "id": "66fe8cbb840c0ac9d2b14535",
+    "name": "Niche Instant Drink",
+    "price": "70"
+  },
+  "msg": "product created",
+  "status": "ok"
+}
