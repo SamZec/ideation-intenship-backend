@@ -3,3 +3,4 @@ gunicorn
 mongoengine
 pymongo
 Flasgger
+Flask-CORS
