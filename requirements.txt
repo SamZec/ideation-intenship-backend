@@ -1,6 +1,14 @@
-flask
-gunicorn
+pymongo==4.6.3
 mongoengine
-pymongo[srv]
+python-dotenv
+Flask
 Flasgger
 Flask-CORS
+gunicorn
+pandas
+openpyxl
+bcrypt
+paystackapi
+pyjwt[crypto]
+flask-jwt-extended
+python-decouple
