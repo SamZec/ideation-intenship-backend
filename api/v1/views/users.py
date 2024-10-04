@@ -53,15 +53,20 @@ def create():
     first_name = data.get('first_name', request.form.get('first_name'))
     if not first_name:
         abort(400, 'first name required')
+    data['first_name'] = first_name
 
     last_name = data.get('last_name', request.form.get('last_name'))
+    if last_name:
+        data['last_name'] = last_name
     email = data.get('email', request.form.get('email'))
     if not email:
         abort(400, 'email required')
+    data['email'] = email
 
     phone = data.get('phone', request.form.get('phone'))
     if not phone:
         abort(400, 'phone number required')
+    data['phone'] = phone
     user_exits = User.objects(email=email).first()
     if user_exits:
         abort(400, 'email already exist')
