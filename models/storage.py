@@ -1,7 +1,6 @@
 #!/bin/python3
 """storage ,odule for difining storage class"""
 import os
-from models.config import host
 from mongoengine import connect, disconnect
 
 
