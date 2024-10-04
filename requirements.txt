@@ -1,6 +1,6 @@
 flask
 gunicorn
 mongoengine
-pymongo
+pymongo[srv]
 Flasgger
 Flask-CORS
