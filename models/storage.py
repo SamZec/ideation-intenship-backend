@@ -12,7 +12,7 @@ class Storage():
         if os.getenv('local'):
             connect('IDEATION_API')
         else:
-            connect(host=cofig('DB_URI'), db='IDEATION_API')
+            connect(host=config('DB_URI'), db='IDEATION_API')
 
     def disconnect(self):
         """close connection"""
