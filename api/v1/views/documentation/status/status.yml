@@ -1,0 +1,15 @@
+Check api active status
+---
+tags:
+  - status
+responses:
+  200:
+    description: api is active
+    schema:
+      type: object
+      example: {
+        "assigner": "IDEATION AXIS",
+        "assignee": "AFFUM SAMUEL",
+        "project": "API DESIGN AND DEVELOPMENT",
+        "status": "OK"
+        }

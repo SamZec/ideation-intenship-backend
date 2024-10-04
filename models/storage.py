@@ -9,10 +9,11 @@ class Storage():
     """storage object class"""
     def connect(self):
         """connect to mongodb databse"""
-        if os.getenv('local'):
-            connect('IDEATION_API')
-        else:
+        if config('DB_URI', None): #specified enviroment connection
             connect(host=config('DB_URI'), db='IDEATION_API')
+
+        else: #default localhost connection
+            connect('IDEATION_API')
 
     def disconnect(self):
         """close connection"""

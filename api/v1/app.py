@@ -3,8 +3,8 @@
 from flask_cors import CORS
 from models import storage
 from flasgger import Swagger
-from flask import Flask, jsonify
 from api.v1.views import app_views
+from flask import Flask, jsonify, abort
 
 
 app = Flask(__name__)
@@ -15,7 +15,15 @@ app.register_blueprint(app_views)
 cors = CORS(app, resources={r"/api/v1/*": {"origins": "*"}})
 
 Swagger(app)
-storage.connect()
+#storage.connect()
+
+@app.before_request
+def connect():
+    """connect to database"""
+    try:
+        storage.connect()
+    except Exception as e:
+        abort(500, str(e))
 
 @app.errorhandler(405)
 def not_allowed(error):
