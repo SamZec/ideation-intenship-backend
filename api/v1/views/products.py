@@ -16,7 +16,7 @@ def all_products():
         response = list(cursor)
         if response:
             return jsonify({
-                'users': response,
+                'products': response,
                 'status': 'ok'})
     except Exception as e:
         abort(500, str(e))
