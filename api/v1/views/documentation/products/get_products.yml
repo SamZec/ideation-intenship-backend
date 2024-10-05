@@ -17,7 +17,7 @@ responses:
       type: object
       example: {
   "status": "ok",
-  "users": [
+  "products": [
     {
       "category": "Food",
       "id": "66fc92b2a2611c08e1051b2f",
